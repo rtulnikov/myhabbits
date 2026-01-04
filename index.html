@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400..700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>Трекер привычек</title>
+    </head>
+    <body>
+        <div class="container">
+            <aside>
+                <img class="logo" src="images/logo.svg" alt="лого" />
+                <nav>
+                    <div class="menu">
+                        <button class="menu__item menu__item-active">
+                            <img src="images/sport.svg" alt="спорт" />
+                        </button>
+                        <button class="menu__item">
+                            <img src="images/Water.svg" alt="вода" />
+                        </button>
+                        <button class="menu__item">
+                            <img src="images/food.svg" alt="еда" />
+                        </button>
+                    </div>
+                    <button class="add">
+                        <img src="images/add.svg" alt="добавить привычку" />
+                    </button>
+                </nav>
+            </aside>
+            <div class="wrapper">
+                <header>
+                    <h1>Отжимания</h1>
+                    <div class="progress">
+                        <div class="progress__text">
+                            <div class="progress__name">Прогресс</div>
+                            <div class="progress__percent">80%</div>
+                        </div>
+                        <div class="progress__bar">
+                            <div class="progress__cover-bar"></div>
+                        </div>
+                    </div>
+                </header>
+                <main>
+                    <div class="days">
+                        <div class="habbit">
+                            <div class="habbit__day">день 1</div>
+                            <div class="habbit__text">ffsaf</div>
+                            <button class="habbit__delete">
+                                <img src="images/delete.svg" alt="удаление" />
+                            </button>
+                        </div>
+                        <div class="habbit">
+                            <div class="habbit__day">день 2</div>
+                            <div class="habbit__text">ffsaf</div>
+                            <button class="habbit__delete">
+                                <img src="images/delete.svg" alt="удаление" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="habbit">
+                        <div class="habbit__day" id="next__day">день2</div>
+                        <form class="habbit__form">
+                            <input
+                                class="habbit__comment"
+                                type="text"
+                                name="comment"
+                                placeholder="Комментарий"
+                            />
+                            <img
+                                class="habbit__comment-icon"
+                                src="images/comment.svg"
+                                alt="Коммент"
+                            />
+                            <button type="submit" class="form__add">
+                                Добавить
+                            </button>
+                        </form>
+                    </div>
+                </main>
+            </div>
+            <div class="cover cover_hidden" id="add-habbit-popup">
+                <div class="popup">
+                    <h2>Новая привычка</h2>
+                    <div class="icon-label">Иконка</div>
+                    <div class="icon-select">
+                        <button id="1" class="icon icon_active" data-icon="sport">
+                            <img src="images/sport.svg" alt="Спорт" />
+                        </button>
+                        <button id="2" class="icon" data-icon="water">
+                            <img src="images/Water.svg" alt="Напитки" />
+                        </button>
+                        <button id="3" class="icon" data-icon="food">
+                            <img src="images/food.svg" alt="Еда" />
+                        </button>
+                    </div>
+                    <form class="popup__form">
+                        <input type="text" name="name" placeholder="Название" />
+                        <input type="number" name="target" placeholder="Цель" />
+                        <button class="button" type="submit">Добавить</button>
+                    </form>
+                    <button class="popup__close">
+                        <img src="images/cross.svg" alt="крестик" />
+                    </button>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="data/data.js"></script>
+    </body>
+</html>
