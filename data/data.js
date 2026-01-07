@@ -3,6 +3,7 @@ const iconMenu = document.querySelector(".menu")
 const h1 = document.querySelector(".h1");
 const progressPerc = document.querySelector(".progress__percent")
 const covBar = document.querySelector(".progress__cover-bar")
+const days = document.querySelector(".days")
 
 // console.log(habArr)
 function menu(id) {
@@ -21,6 +22,7 @@ function menu(id) {
             button.addEventListener("click", () => {
                 menu(elem.id)
                 header(elem.id)
+                renderBody(elem)
             })
 
             button.classList.add("menu__item")
@@ -41,7 +43,7 @@ function header(id) {
     const obj = habArr.find((elem) => elem.id == id);
     let percen = Math.round(obj.days.length / obj.target * 100);
 
-    if(percen > 100) percen = 100;
+    if (percen > 100) percen = 100;
 
     h1.textContent = obj.name;
     progressPerc.textContent = percen + "%";
@@ -49,3 +51,22 @@ function header(id) {
 
 }
 header(habArr[0].id)
+
+function renderBody(obj) {
+    days.innerHTML = '';
+    for (let elem = 0; elem < obj.days.length; elem++) {
+        const habDiv = document.createElement("div");
+        console.log(obj.days[elem])
+        
+        habDiv.classList.add("habbit")
+        habDiv.innerHTML = `<div class="habbit__day">день ${elem + 1}</div>
+                            <div class="habbit__text">${JSON.stringify(obj.days[elem])}</div>
+                            <button class="habbit__delete">
+                                <img src="images/delete.svg" alt="удаление" />
+                            </button>`;
+        days.append(habDiv);
+
+    }
+
+}
+renderBody(habArr[0])
