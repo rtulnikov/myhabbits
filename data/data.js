@@ -54,13 +54,13 @@ header(habArr[0].id)
 
 function renderBody(obj) {
     days.innerHTML = '';
-    for (let elem = 0; elem < obj.days.length; elem++) {
+    for (let number = 0; number < obj.days.length; number++) {
         const habDiv = document.createElement("div");
-        console.log(obj.days[elem])
+        console.log(obj.days[number])
         
         habDiv.classList.add("habbit")
-        habDiv.innerHTML = `<div class="habbit__day">день ${elem + 1}</div>
-                            <div class="habbit__text">${JSON.stringify(obj.days[elem])}</div>
+        habDiv.innerHTML = `<div class="habbit__day">день ${number + 1}</div>
+                            <div class="habbit__text">${obj.days[number].comment}</div>
                             <button class="habbit__delete">
                                 <img src="images/delete.svg" alt="удаление" />
                             </button>`;
