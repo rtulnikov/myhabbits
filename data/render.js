@@ -3,6 +3,7 @@ import { state, selectors } from "./main.js";
 
 // console.log(habArr)
 function renderMenu(id) {
+    console.log(id)
     for (const elem of state.habArr) {
         const haveBtn = document.querySelector(`[btn-id="${elem.id}"]`);
 

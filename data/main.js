@@ -1,5 +1,6 @@
 import {addDay } from "./days.js";
 import {render } from "./render.js";
+import {setIcon } from "./popup.js";
 
 export const selectors = {
     iconMenu : document.querySelector(".menu"),
@@ -8,7 +9,28 @@ export const selectors = {
     covBar : document.querySelector(".progress__cover-bar"),
     days : document.querySelector(".days"),
     formHabbit : document.querySelector(".habbit__form"),
+    cover: document.querySelector(".cover"),
+    close: document.querySelector(".popup__close"),
+    icons: document.querySelectorAll(".icon"),
+    select: document.querySelector(".icon-select")
 }
+
+const btnAdd = document.querySelector(".add")
+btnAdd.addEventListener("click", () => {
+    console.log('всплывает окно')
+    selectors.cover.classList.remove("cover_hidden")
+})
+selectors.close.addEventListener("click", () => {
+    console.log('закрывается окно')
+    selectors.cover.classList.add("cover_hidden")
+})
+selectors.select.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        setIcon(btn)
+    })
+})
+
+
 
 export const state = {
     activeHabbitId : null,
